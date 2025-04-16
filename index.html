@@ -103,6 +103,11 @@
       margin: 0 0.5em;
       text-decoration: none;
     }
+
+    /* Widget Fix: sicherstellen, dass es nicht überlagert wird */
+    #chat-widget-container {
+      z-index: 9999 !important;
+    }
   </style>
 </head>
 <body>
@@ -156,7 +161,6 @@
         <button type="submit">Absenden</button>
       </form>
     </section>
-
   </main>
 
   <footer>
@@ -168,18 +172,18 @@
     </p>
   </footer>
 
-      <!-- Widget Configuration -->
-<script>
-  window.ChatWidgetConfig = {
-    webhook: {
-      url: 'http://localhost:5678/webhook/f406671e-c954-4691-b39a-66c90aa2f103/chat',
+  <!-- Widget Configuration -->
+  <script>
+    window.ChatWidgetConfig = {
+      webhook: {
+        url: 'https://example.com/webhook/f406671e-c954-4691-b39a-66c90aa2f103/chat',
         route: 'general'
       },
       branding: {
-        logo: '<your company logo URL>',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/Logo_placeholder.png',
         name: 'nocodecreative.io',
-        welcomeText: 'Hi 👋, how can we help?',
-        responseTimeText: 'We typically respond right away'
+        welcomeText: 'Hi 👋, wie können wir helfen?',
+        responseTimeText: 'Wir antworten in der Regel sofort'
       },
       style: {
         primaryColor: '#85a4ff',
@@ -191,7 +195,7 @@
     }
   </script>
 
-  <script src="https://cdn.jsdelivr.net/gh/WayneSimpson/n8n-chatbot-template@fb94a94c/chat-widget.js"></script>
-  
+  <script src="https://cdn.jsdelivr.net/gh/WayneSimpson/n8n-chatbot-template/chat-widget.js"></script>
+
 </body>
 </html>
